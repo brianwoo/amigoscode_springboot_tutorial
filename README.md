@@ -7,7 +7,11 @@ docker pull postgres:14
 
 # Run the database
 ```
-docker run --name spring-student -e POSTGRES_USER=postgres -e POSTGRES_PASSWORD=postgres -p 5432:5432 -v /Projects/amigoscode_springboot_tutorial/data:/var postgres
+docker run --name spring-student \
+-e POSTGRES_USER=postgres \
+-e POSTGRES_PASSWORD=postgres \
+-p 5432:5432 \
+-v $HOME/Projects/amigoscode_springboot_tutorial/data:/var postgres
 ```
 
 # To restart
