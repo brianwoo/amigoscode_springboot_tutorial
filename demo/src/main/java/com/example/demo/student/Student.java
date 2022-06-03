@@ -1,5 +1,10 @@
 package com.example.demo.student;
 
+import com.example.demo.course.Course;
+import com.fasterxml.jackson.annotation.JsonBackReference;
+import org.hibernate.annotations.Fetch;
+import org.hibernate.annotations.FetchMode;
+
 import javax.persistence.*;
 import java.time.LocalDate;
 import java.time.Period;
@@ -26,6 +31,10 @@ public class Student {
     private Integer age;
 
     public Student() {
+    }
+
+    public Student(Long studentId) {
+        this.id = studentId;
     }
 
     public Student(Long id, String name, String email, LocalDate dob) {
@@ -80,6 +89,7 @@ public class Student {
     public void setAge(Integer age) {
         this.age = age;
     }
+
 
     @Override
     public String toString() {
